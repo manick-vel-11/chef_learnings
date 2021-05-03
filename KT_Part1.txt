@@ -1,0 +1,11 @@
+********************************************          KT Part 1   **********************************************************
+
+Hi, 
+
+Please go through links below to understand Chef
+
+- Study about what is chef https://www.chef.io/chef/ &
+https://docs.chef.io/chef_overview.html
+- Create a free account on manage.chef.io (Hosted chef)
+- Chef hands on https://learn.chef.io/modules/learn-the-basics/ubuntu#/
+- Create a git repo and push all the assignments you do as part of above "hands on" to the repo. Share the link once done. 
