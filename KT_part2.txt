@@ -1,0 +1,13 @@
+
+https://learn.chef.io/modules/manage-a-node-chef-server#/infrastructure-automation
+
+After finishing with this tutorial you should be able to understand
+What is a workstation?
+What is a node?
+What is Chef Server?
+How to bootstrap a node? What does exactly bootstrapping a node means?
+What is the use of running Chef-Client periodically?
+What is a Cookbook?
+How to upload a cookbook on Chef Server? (basically get acquainted
+with those commands)
+How to update a cookbook which is uploaded on Chef Server?

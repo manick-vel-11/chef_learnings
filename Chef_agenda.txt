@@ -1,0 +1,42 @@
+Priority wise issue pickup
+Two lists mostly we concentrate as a priority
+1. https://github.com/chef/customer-bugs/issues
+
+
+2. https://app.zenhub.com/workspaces/sustaining-engineering-5e4e001e33a6285468d9eb87/board?repos=108278,3720567
+
+Our primary project repo is Chef
+
+https://github.com/chef/chef
+
+Our main issues/bugs come from this repo
+
+So there are 3 parts on working the issue :
+
+Analysis
+Recreate
+Apply Fix and push the code
+
+In Analysis we mostly need to identify the environment/chef version & platform issue is related to.
+
+In recreate/reproduce there are certain ways
+A)
+1. Create VM from Cloud(AWS/Azure)
+2. Setup chef there with the same version what is mentioned in the issue/bug
+
+   You can refer/consider https://github.com/chef/chef-workstation/issues/1167#issuecomment-627407517 while setting up your environment
+
+3. Create recipe/cookbook and try to reproduce with chef-apply <recipe.rb>
+B) Using kitchen
+ 1. Go to cd kitchen-test
+ 2. Update kitchen.yml
+ 3. Create your recipe file under kitchen-test/cookbooks/end_to_end/recipes
+ 4. kitchen create and kitchen converge
+
+In Applying fix Part
+
+1. You need to clone the forked repo i.e. https://github.com/msystechnologiesllc/chef
+2. Debug the code using pry/buybug to identify the area which is causing the bug
+3. Implement/Apply fix
+4. Create PR by pushing the code
+
