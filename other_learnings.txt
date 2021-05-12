@@ -1,0 +1,3 @@
+Test kitchen
+
+It is a integrated testing framework. Allows to write test recipes which will run on the VMs once instantiated and converged using the cookbook.
