@@ -1,0 +1,34 @@
+1) Go through this Docs https://docs.chef.io/cookbooks/ and understand each and every component of it
+2) Use cron resource and setup a cronjob which will create the file in your home path and make an entry of current time into it. This file should get updated after every 15 min using cron job.
+
+Once you are done with #2 create the gist of your recipe and share with us.
+Also include Chef commands that you explored while running these recipes.
+
+3) Understand how to write custom resources and standards followed by Chef to write Custom resources.
+
+4) Explore the Cron resource code by cloning https://github.com/chef/chef
+Run bundle install command into it
+Check how to use Chef zero to run cookbooks locally
+1) Doc to refer https://docs.chef.io/ctl_chef_client/#about-chef-zero
+2) Also you can use chef-client -z options to run the recipes on --local-mode (
+Using bundle exec <and your chef-client command> will run the current code which is there is the repo (Ruby way to execute current code in library)
+
+Add debugger in the cron resource and explore the code. Understand as much as you can (This is just to give you glimpse of how resources work in Chef)
+
+
+
+
+cron 'cookbooks_report' do
+  action :create
+  minute '0'
+  hour '20'
+  weekday '4'
+  user 'chefio'
+  mailto 'mkumaravel@msystechnologies.com'
+  home '/home/ad.msystechnologies.com/mkumaravel/'
+  command %W{
+    cd /home/ad.msystechnologies.com/mkumaravel/time_chef_cron.txt
+    Time.now
+    bundle exec rake cookbooks_report
+  }.join(' ')
+end

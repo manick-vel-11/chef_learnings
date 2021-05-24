@@ -1,0 +1,73 @@
+1) https://learn.chef.io/courses/course-v1:chef+Infra101+perpetual/courseware/49dd59ea8b1f4c50ae9a260db35452ad/83abb7fe891e49629336150c19d649ee/4?activate_block_id=block-v1%3Achef%2BInfra101%2Bperpetual%2Btype%40html%2Bblock%40204f89dfaaf341da96ec252c4d03ae0b
+     Use Ubuntu and Vagrant environment for this.
+After completing this module we expect you should be able to understand
+- What is Test Kitchen ?
+   - Purpose of the Test Kitchen?
+   - How to use it ?
+
+2) https://learn.chef.io/courses/course-v1:chef+Infra101+perpetual/courseware/2e86b750149145a09d19d7c2a2ee2af5/996da03ae96c45b385c0755613266995/1?activate_block_id=block-v1%3Achef%2BInfra101%2Bperpetual%2Btype%40vertical%2Bblock%40771cae44b49d48a8b95698ed0fa29589
+
+After completing this module we expect you should be able to understand
+ - What is policyfiles?
+- How to use policyfiles?
+- Commands to manage policyfiles
+
+Also go through the Chef Docs to read more about it.
+https://docs.chef.io/config_rb_policyfile/#
+
+Base reference : https://learn.chef.io/courses/course-v1:chef+Infra101+perpetual/course/
+
+
+
+**************************************************************************
+
+Answers.
+
+What is Test Kitchen?
+
+It is chef's integrated testing framework. It is used to automatically test cookbooks across any combination of platforms and test suites.
+
+
+Purpose of the Test Kitchen?
+It enables writing test recipes , which will run on the VMs once they are instantiated and converged using the cookbook. The test recipes run on that VM and can verify if everything works as expected. Concepts related are platform, suite, instance, driver and provisioner.
+
+
+
+How to use it ?
+-> Test suites are defined in kitchen.yml. See the configuration documentation for options and syntax information
+-> Supports cookbooks testing across many cloud providers and virtualization technologies.
+-> Uses a comprehensive set of operating system base images from chef's Bento project.
+
+
+
+What is PolicyFiles?
+
+It is a way to manage role, environment and community cookbook data with a single document that is uploaded to the Chef infra server. It makes it easier to test and promote code safely with a simple interface. Improves the user experience and resolves real world problems that some workflows built around Chef Infra.
+
+
+How to use policyfiles?
+-> Focus on the workflow of the entire system
+-> Safe development workflows
+-> Less expensive computation
+-> Code visibility
+-> Role mutability
+-> Cookbook mutability
+-> Replaces Berkshlef and the environment
+
+
+Commands to manage policyfiles
+
+-> chef clean-policy-cookbooks
+-> chef clean-policy-revisions
+-> chef delete-policy
+-> chef delete-policy-group
+-> chef diff POLICY_FILE DIRECTORY
+-> chef export POLICY_FILE DIRECTORY
+-> chef generate policyfile POLICY_NAME
+-> chef generate repo REPO_NAME
+-> chef install POLICY_FILE
+-> chef push POLICY_GROUP POLICY_FILE
+-> chef push-archive POLICY_GROUP ARCHIVE_FILE
+-> chef show-policy POLICY_NAME POLICY_GROUP
+-> chef undelete
+-> chef update POLICY_FILE
