@@ -18,17 +18,32 @@ Add debugger in the cron resource and explore the code. Understand as much as yo
 
 
 
-cron 'cookbooks_report' do
-  action :create
-  minute '0'
-  hour '20'
-  weekday '4'
-  user 'chefio'
-  mailto 'mkumaravel@msystechnologies.com'
-  home '/home/ad.msystechnologies.com/mkumaravel/'
-  command %W{
-    cd /home/ad.msystechnologies.com/mkumaravel/time_chef_cron.txt
-    Time.now
-    bundle exec rake cookbooks_report
-  }.join(' ')
-end
+****************************************
+
+Answers
+
+1. Got familiar with cookbook components. Read through each of them
+-> Recipes
+-> Attributes
+-> Files
+-> Libraries
+-> Custom Resources
+-> Templates
+-> Ohai Plugins
+-> Metadata
+
+2. Followed the below steps to achieve this
+
+-> Updated the cron job in my system using crontab command
+# m h  dom mon dow   command
+*/15 * * * * /bin/sh /home/ad.msystechnologies.com/mkumaravel/git/chef_learnings/cron_cookbook_sample/recipes/sample1.sh
+
+-> Made chef-client to run in sample.sh file which will pickup the file_resource.rb and run its content
+-> Made current time to display in the file_resource.rb file
+-> Current time will get displayed every 15 minutes when cronjob runs
+
+It got familiar with chef commands like chef-client, chef-zero etc. Also, test kitchen as well
+
+3. Worked on creating custom resources and learnt about creating and modifying custom resources.
+
+4. Got exposure to chef repo and had a chance to come across kitchen interface, chef-client -z command.
